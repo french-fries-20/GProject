@@ -2,9 +2,7 @@
   <div class="layout">
     <el-container>
       <el-header class="header">
-        <div class="logo">
-        logo
-        </div>
+        <div class="logo">logo</div>
         <div class="drop">
           <el-dropdown>
             <el-button type="primary">
@@ -22,58 +20,39 @@
       </el-header>
       <el-container>
         <el-aside width="200px">
-          <el-menu>
-            <el-sub-menu index="1">
-              <template #title>
-                <el-icon>
-                  <location />
-                </el-icon>
-                <span>Navigator One</span>
-              </template>
-              <el-menu-item-group title="Group One">
-                <el-menu-item index="1-1">item one</el-menu-item>
-                <el-menu-item index="1-2">item two</el-menu-item>
-              </el-menu-item-group>
-              <el-menu-item-group title="Group Two">
-                <el-menu-item index="1-3">item three</el-menu-item>
-              </el-menu-item-group>
-              <el-sub-menu index="1-4">
-                <template #title>item four</template>
-                <el-menu-item index="1-4-1">item one</el-menu-item>
-              </el-sub-menu>
-            </el-sub-menu>
-            <el-menu-item index="2">
+          <el-menu router>
+            <el-menu-item index="/home">
               <el-icon><icon-menu /></el-icon>
-              <span>Navigator Two</span>
+              <span>首页</span>
             </el-menu-item>
-            <el-menu-item index="3" disabled>
-              <el-icon>
-                <document />
-              </el-icon>
-              <span>Navigator Three</span>
+            <el-menu-item index="/about">
+              <el-icon><icon-menu /></el-icon>
+              <span>关于</span>
             </el-menu-item>
-            <el-menu-item index="4">
-              <el-icon>
-                <setting />
-              </el-icon>
-              <span>Navigator Four</span>
+            <el-menu-item index="/test">
+              <el-icon><icon-menu /></el-icon>
+              <span>测试</span>
             </el-menu-item>
+            <el-sub-menu index="/pages">
+              <template #title> 页面 </template>
+              <el-menu-item index="/pages/page1">页面1</el-menu-item>
+              <el-menu-item index="/pages/page2">页面2</el-menu-item>
+            </el-sub-menu>
           </el-menu>
         </el-aside>
         <el-main>
-          <!-- <router-view></router-view> -->
+          <router-view></router-view>
           页面内容
         </el-main>
       </el-container>
     </el-container>
   </div>
 </template>
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>
 <style scoped>
-.layout{
-    width: 100%;
-    height: 100%;
+.layout {
+  width: 100%;
+  height: 100%;
 }
 .header {
   border-bottom: 1px solid black;
