@@ -25,10 +25,11 @@
               <el-icon><icon-menu /></el-icon>
               <span>个人中心</span>
             </el-menu-item>
-            <el-menu-item index="/userManage">
-              <el-icon><icon-menu /></el-icon>
-              <span>用户管理</span>
-            </el-menu-item>
+            <el-sub-menu index="/userManage">
+              <template #title> 用户管理</template>
+              <el-menu-item index="/userManagement/userManage">用户管理</el-menu-item>
+              <el-menu-item index="/userManagement/roleManage">角色管理</el-menu-item>
+            </el-sub-menu>
             <el-menu-item index="/attraction">
               <el-icon><icon-menu /></el-icon>
               <span>景点管理</span>

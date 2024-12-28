@@ -1,12 +1,11 @@
 import { createRouter, createWebHistory, Router, RouteRecordRaw } from "vue-router";
-
-import Layout from '@/layout/index.vue'
-import routerView from '@/components/routerView.vue'
+import Layout from '@/layout/index.vue';
+import routerView from '@/components/routerView.vue';
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    name: '/',
+    name: 'root',
     redirect: '/home', // 重定向
     component: Layout,
     children: [
@@ -17,10 +16,24 @@ const routes: RouteRecordRaw[] = [
         meta: { title: '个人中心' }
       },
       {
-        path: '/userManage',
-        name: 'userManage',
-        component: () => import('@/views/userManage.vue'),
-        meta: { title: '用户管理' }
+        path: '/userManagement',
+        name: 'userManagement',
+        component: routerView,
+        meta: { title: '用户管理' },
+        children: [
+          {
+            path: 'userManage',
+            name: 'userManage',
+            component: () => import('@/views/userManagement/userManage.vue'),
+            meta: { title: '用户管理' }
+          },
+          {
+            path: 'roleManage',
+            name: 'roleManage',
+            component: () => import('@/views/userManagement/roleManage.vue'),
+            meta: { title: '角色管理' }
+          }
+        ]
       },
       {
         path: '/attraction',
@@ -36,31 +49,31 @@ const routes: RouteRecordRaw[] = [
       },
       {
         path: '/order',
-        name: '订单管理',
+        name: 'orderManagement',
         component: routerView,
-        meta: { title: '页面' },
+        meta: { title: '订单管理' },
         children: [
           {
-            path: '/order/pending',
-            name: '未完成订单',
+            path: 'pending',
+            name: 'pendingOrders',
             component: () => import('@/views/order/pending.vue'),
-            meta: { title: '页面1' }
+            meta: { title: '未完成订单' }
           },
           {
-            path: '/order/completed',
-            name: '已完成订单',
+            path: 'completed',
+            name: 'completedOrders',
             component: () => import('@/views/order/completed.vue'),
-            meta: { title: '页面2' }
+            meta: { title: '已完成订单' }
           }
         ]
       }
     ]
   }
-]
+];
 
 const router: Router = createRouter({
-  history: createWebHistory(), // createMemoryHistory
+  history: createWebHistory(),
   routes
-})
+});
 
-export default router
+export default router;
