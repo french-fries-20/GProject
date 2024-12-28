@@ -1,6 +1,6 @@
 <template>
     <div>
-        Test
+        attraction 景点管理
     </div>
 </template>
 <script>

@@ -1,9 +1,9 @@
 <template>
     <div>
-        page2
+        帖子管理
     </div>
 </template>
-<script setup ts>
+<script>
 
 </script>
 <style lang="scss">

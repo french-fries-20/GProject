@@ -13,37 +13,43 @@ const routes: RouteRecordRaw[] = [
       {
         path: '/home',
         name: 'home',
-        component: () => import('@/views/Home.vue'),
-        meta: { title: '首页' }
+        component: () => import('@/views/home.vue'),
+        meta: { title: '个人中心' }
       },
       {
-        path: '/about',
-        name: 'about',
-        component: () => import('@/views/About.vue'),
-        meta: { title: '关于' }
+        path: '/userManage',
+        name: 'userManage',
+        component: () => import('@/views/userManage.vue'),
+        meta: { title: '用户管理' }
       },
       {
-        path: '/test',
-        name: 'test',
-        component: () => import('@/views/Test.vue'),
-        meta: { title: '测试' }
+        path: '/attraction',
+        name: 'attraction',
+        component: () => import('@/views/attraction.vue'),
+        meta: { title: '景点管理' }
       },
       {
-        path: '/pages',
-        name: 'pages',
+        path: '/postManage',
+        name: 'postManage',
+        component: () => import('@/views/postManage.vue'),
+        meta: { title: '帖子管理' }
+      },
+      {
+        path: '/order',
+        name: '订单管理',
         component: routerView,
         meta: { title: '页面' },
         children: [
           {
-            path: '/pages/page1',
-            name: 'page1',
-            component: () => import('@/views/pages/Page1.vue'),
+            path: '/order/pending',
+            name: '未完成订单',
+            component: () => import('@/views/order/pending.vue'),
             meta: { title: '页面1' }
           },
           {
-            path: '/pages/page2',
-            name: 'page2',
-            component: () => import('@/views/pages/Page2.vue'),
+            path: '/order/completed',
+            name: '已完成订单',
+            component: () => import('@/views/order/completed.vue'),
             meta: { title: '页面2' }
           }
         ]

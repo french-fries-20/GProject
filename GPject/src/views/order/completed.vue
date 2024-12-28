@@ -1,9 +1,9 @@
 <template>
     <div>
-        个人中心
+        已完成订单
     </div>
 </template>
-<script>
+<script setup ts>
 
 </script>
 <style lang="scss">

@@ -1,6 +1,6 @@
 <template>
     <div>
-        page1
+        用户管理
     </div>
 </template>
 <script setup ts>

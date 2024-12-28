@@ -2,7 +2,7 @@
   <div class="layout">
     <el-container>
       <el-header class="header">
-        <div class="logo">logo</div>
+        <div class="logo">畅游无忧旅游服务后台管理系统</div>
         <div class="drop">
           <el-dropdown>
             <el-button type="primary">
@@ -23,20 +23,24 @@
           <el-menu router>
             <el-menu-item index="/home">
               <el-icon><icon-menu /></el-icon>
-              <span>首页</span>
+              <span>个人中心</span>
             </el-menu-item>
-            <el-menu-item index="/about">
+            <el-menu-item index="/userManage">
               <el-icon><icon-menu /></el-icon>
-              <span>关于</span>
+              <span>用户管理</span>
             </el-menu-item>
-            <el-menu-item index="/test">
+            <el-menu-item index="/attraction">
               <el-icon><icon-menu /></el-icon>
-              <span>测试</span>
+              <span>景点管理</span>
             </el-menu-item>
-            <el-sub-menu index="/pages">
-              <template #title> 页面 </template>
-              <el-menu-item index="/pages/page1">页面1</el-menu-item>
-              <el-menu-item index="/pages/page2">页面2</el-menu-item>
+            <el-menu-item index="/postManage">
+              <el-icon><icon-menu /></el-icon>
+              <span>帖子管理</span>
+            </el-menu-item>
+            <el-sub-menu index="/order">
+              <template #title> 订单管理</template>
+              <el-menu-item index="/order/pending">未完成订单</el-menu-item>
+              <el-menu-item index="/order/completed">已完成订单</el-menu-item>
             </el-sub-menu>
           </el-menu>
         </el-aside>
@@ -58,10 +62,11 @@
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
+  align-items: center; /* 确保子元素垂直居中 */;
 
   .drop {
     display: flex;
-    align-content: center;
+    align-items: center;
     gap: 10px;
   }
 
